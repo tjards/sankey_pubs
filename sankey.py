@@ -79,7 +79,7 @@ dates = [2015,
         2023,
         2023
         ]
-dates_norm = [(x - 2015+2)/(2023-2015+2) for x in dates]
+dates_norm = [(x - 2015+2)/(2023-2015+2) - 0.1 for x in dates]
 
 # connect pubs to disciplines
 # -----------------------------
