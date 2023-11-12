@@ -1,1 +1,1 @@
-# Sankey chart for publication record<p align="center">  <img src="newplot.png" width="90%"></p>
+# Sankey chart for publication recordThis program produces a sankey chart for an academic publication record by date and discipline. Data needs to be input manually, but future versionswill automatically pull from Google Scholar.## Example<p align="center">  <img src="newplot.png" width="90%"></p>
