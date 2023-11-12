@@ -175,8 +175,26 @@ fig = go.Figure(go.Sankey(
         "value": list(np.ones(len(connects_source)))
         }))
 
+
 fig.update_layout(
     font_size=15
     )
+
+for x_coordinate, column_name in enumerate(dates):
+  fig.add_annotation(
+          x=xs[x_coordinate+3],
+          y = 1.05,
+          xref="paper",
+          yref="paper",
+          text=column_name,
+          showarrow=False,
+          font=dict(
+              size=16,
+              color="black"
+              ),
+          align="center"
+          )
+
+
 
 fig.show()
