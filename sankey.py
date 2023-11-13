@@ -20,34 +20,34 @@ pio.renderers.default='browser'
 
 # publications
 # ------------
-pubs = ['c: IEEE MED',
-        'c: IEEE SYSCON',
-        'c: IEEE ICUAS',
-        'c: IEEE SYSCON',
-        'c: IEEE CCECE',
-        'c: IEEE ICUAS',
-        'c: IFAC WC',
-        'c: IFAC WC',
-        'j: IEEE Sys J',
-        'j: IEEE Sys J',
-        'c: IEEE SYSCON',
-        'j: IEEE Potentials',
-        'j: Int J Adapt Cont Sig Proc',
-        'c: IEEE SYSCON',
-        'c: IFAC WC',
-        'c: IFAC WC',
-        'j: IEEE Sys J',
-        'c: IEEE SYSCON',
-        'j: J Intel Rob Sys',
-        'j: IEEE ACCESS',
-        'j: IEEE Trans Net Sci Eng',
-        'j: J Intel Rob Sys',
-        'c: IEEE SYSCON'
+pubs = ['c:<b>IEEE MED</b>',
+        'c:<b>IEEE SYSCON</b>',
+        'c:<b>IEEE ICUAS</b>',
+        'c:<b>IEEE SYSCON</b>',
+        'c:<b>IEEE CCECE</b>',
+        'c:<b>IEEE ICUAS</b>',
+        'c:<b>IFAC WC</b>',
+        'c:<b>IFAC WC</b>',
+        'j:<b>IEEE Sys J</b>',
+        'j:<b>IEEE Sys J</b>',
+        'c:<b>IEEE SYSCON</b>',
+        'j:<b>IEEE Pot</b>',
+        'j:<b>Int J Adapt Cont Sig Proc</b>',
+        'c:<b>IEEE SYSCON</b>',
+        'c:<b>IFAC WC</b>',
+        'c:<b>IFAC WC</b>',
+        'j:<b>IEEE Sys J</b>',
+        'c:<b>IEEE SYSCON</b>',
+        'j:<b>J Intel Rob Sys</b>',
+        'j:<b>IEEE ACCESS</b>',
+        'j:<b>IEEE Trans Net Sci Eng</b>',
+        'j:<b>J Intel Rob Sys</b>',
+        'c:<b>IEEE SYSCON</b>'
         ]
 
 # disciplines
 # -----------
-discs = ["Swarming", "Control", "Learning"]
+discs = ["<b>Swarming</b>", "<b>Control</b>", "<b>Learning</b>"]
 
 # labels
 # ------
@@ -79,7 +79,7 @@ dates = [2015,
         2023,
         2023
         ]
-dates_norm = [(x - 2015+2)/(2023-2015+2) - 0.1 for x in dates]
+dates_norm = [(x - 2015+2)/(2023-2015+3) - 0.1 for x in dates]
 
 # connect pubs to disciplines
 # -----------------------------
@@ -145,6 +145,14 @@ for i in range(0,len(connects)):
 # ------------------------
 ys = [0.3, 0.2, 0.1] + xs 
 xs = [0, 0, 0] + xs 
+ys[12] = 0.65
+ys[13] = 0.65
+ys[14] = 0.65
+
+ys[17] = 0.75
+ys[18] = 0.75
+ys[19] = 0.75
+ys[20] = 0.75
 
 # draw the nodes
 # --------------
@@ -162,7 +170,8 @@ color_node = ['rgb(255, 192, 192, 0.8)', 'rgb(192, 192, 255,0.8) ', 'rgb(192, 25
 # add degrees
 # ------------
 degrees = ['Phd (Queen\'s)']
-degrees_year_norm = [(x - 2015+2)/(2023-2015+2) for x in [2018.5]]
+#degrees_year_norm = [(x - 2015+2)/(2023-2015+3) for x in [2018.5]]
+degrees_year_norm = [(x - 2015+1)/(2023-2015+3) for x in [2018.5]]
 degrees_source = [5,6,7,8,9,10,11,12,13,14]
 degrees_target = [26,26,26,26,26,26,26,26,26,26]
 degrees_color = ['rgba(180, 128, 200, 0.5)']
@@ -190,7 +199,7 @@ fig = go.Figure(go.Sankey(
 
 
 fig.update_layout(
-    font_size=15
+    font_size=14
     )
 
 for x_coordinate, column_name in enumerate(dates):
