@@ -67,7 +67,7 @@ dates = [2015,
         2018,
         2018,
         2018,
-        2019,
+        2018,
         2019,
         2020,
         2020,
@@ -79,7 +79,7 @@ dates = [2015,
         2023,
         2023
         ]
-dates_norm = [(x - 2015+2)/(2023-2015+3) - 0.1 for x in dates]
+dates_norm = [(x - 2015+2)/(2023-2015+5) - 0.1 for x in dates]
 
 # connect pubs to disciplines
 # -----------------------------
@@ -143,11 +143,12 @@ for i in range(0,len(connects)):
 
 # align by publcation dates
 # ------------------------
-ys = [0.3, 0.2, 0.1] + xs 
+ys = [0.1, 0.2, 0.3] + xs 
 xs = [0, 0, 0] + xs 
 ys[12] = 0.65
 ys[13] = 0.65
 ys[14] = 0.65
+ys[15] = 0.65
 
 ys[17] = 0.75
 ys[18] = 0.75
@@ -171,13 +172,18 @@ color_node = ['rgb(255, 192, 192, 0.8)', 'rgb(192, 192, 255,0.8) ', 'rgb(192, 25
 # ------------
 degrees = ['Phd (Queen\'s)']
 #degrees_year_norm = [(x - 2015+2)/(2023-2015+3) for x in [2018.5]]
-degrees_year_norm = [(x - 2015+1)/(2023-2015+3) for x in [2018.5]]
-degrees_source = [5,6,7,8,9,10,11,12,13,14]
-degrees_target = [26,26,26,26,26,26,26,26,26,26]
+degrees_year_norm = [(x - 2015+1)/(2023-2015+5) for x in [2018.5]]
+degrees_source = [5,6,7,8,9,10,11,12,13,14,15]
+degrees_target = [26,26,26,26,26,26,26,26,26,26,26]
 degrees_color = ['rgba(180, 128, 200, 0.5)']
 degrees_color_links = []
 for i in degrees_source:
     degrees_color_links += ['rgba(180, 128, 200, 0.5)']
+
+# remove first part of labels
+# ---------------------------
+for i in range(len(discs),len(labels)):
+    labels[i] = labels[i][2::]
 
 # produce the chart
 # -----------------
