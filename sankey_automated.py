@@ -72,7 +72,6 @@ for i in range(0,len(connects)):
             else:
                 color_links += ['rgba(0, 0, 0, 0.2)']
 
-
 # align by publcation dates
 # ------------------------
 discsx      = []
@@ -102,7 +101,6 @@ degrees_color_links = []
 for i in degrees_source:
     degrees_color_links += ['rgba(180, 128, 200, 0.5)']
 
-
 # draw the nodes
 # --------------
 color_node = []
@@ -111,7 +109,6 @@ color_node = []
 for k in pubs:
     color_node += ['rgba(255, 255, 255, 0.2)']
 color_node = ['rgb(255, 192, 192, 0.8)', 'rgb(192, 192, 255,0.8) ', 'rgb(192, 255, 192,0.8)'] + ['rgb(192, 255, 192,0.8)'] + color_node
-
 
 # truncate labels
 # ---------------
@@ -141,11 +138,9 @@ fig = go.Figure(go.Sankey(
         "value": list(np.ones(len(connects_source + degrees_source)))
         }))
 
-
 fig.update_layout(
     font_size=14
     )
-
 for x_coordinate, column_name in enumerate(dates):
   fig.add_annotation(
           x=xs[x_coordinate+len(discs)],
@@ -160,7 +155,5 @@ for x_coordinate, column_name in enumerate(dates):
               ),
           align="center"
           )
-
-
-
+  
 fig.show()

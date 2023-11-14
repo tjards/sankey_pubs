@@ -25,8 +25,8 @@ keywords_disciplines = [
     ['multi', 'agent', 'swarm', 'flock', 'swarming', 'swarms', 'cooperative']
     ]
 
-    #%% pull data
-    # -----------
+#%% pull data
+# -----------
 
 def pull_data(author_name):
 
@@ -40,6 +40,7 @@ def pull_data(author_name):
     return author
 
 #%% Build lists
+# -------------
 
 def build_lists(author_name):
 
@@ -50,7 +51,6 @@ def build_lists(author_name):
     dates = []
     titles = []
     connects = []
-    # note: add the degree part later
     
     # iterate through
     for i in range(0,len(author['publications'])):
